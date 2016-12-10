@@ -54,7 +54,7 @@ public class CalculatorTest {
 	@Test(expected = IllegalArgumentException.class)
 	public void testDivideMethod() throws Exception {
 		double a = 10.0;
-		double b = 2.0;
+		double b = 0.0;
 		
 		classUnderTest.divide(a, b);
 		

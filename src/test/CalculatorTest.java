@@ -3,6 +3,9 @@ package test;
 import main.Calculator;
 
 import org.junit.Before;
+
+import static org.junit.Assert.*;
+
 import org.junit.After;
 import org.junit.Test;
 
@@ -22,8 +25,45 @@ public class CalculatorTest {
 	}
 	
 	@Test
-	public void test1() throws Exception {
-		System.out.println("Metoda testowa");
+	public void testSumMethod() throws Exception {
+		double a = 4.0;
+		double b = 7.0;
+		
+		double result = classUnderTest.sum(a, b);
+		assertEquals(11.0, result, 0.001);
 	}
+	
+	@Test
+	public void testSubtractMethod() throws Exception {
+		double a = 7.0;
+		double b = 4.0;
+		
+		double result = classUnderTest.subtract(a, b);
+		assertEquals(3.0, result, 0.001);
+	}
+	
+	@Test
+
+	public void testMultiplyMethod() throws Exception {
+		double a = 4.0;
+		double b = 7.0;
+		
+		double result = classUnderTest.multiply(a, b);
+		assertEquals(28.0, result, 0.001);
+	}
+	@Test(expected = IllegalArgumentException.class)
+	public void testDivideMethod() throws Exception {
+		double a = 10.0;
+		double b = 2.0;
+		
+		classUnderTest.divide(a, b);
+		
+		
+		
+	}
+
+	
+
+
 
 }
